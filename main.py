@@ -27,7 +27,7 @@ yellowobj.save("yellow.mp3")
 greenobj = gTTS(text=str_green, lang=language, slow=False)
 greenobj.save("green.mp3")
 
-#color = None
+color = None
 
 
 # Indefinitely initiate Video Stream
@@ -88,27 +88,34 @@ while(True):
     # Say the color out loud
 
     if (redPixelCount > yellowPixelCount) and (redPixelCount > greenPixelCount):
-        #currentColor = red
-        #if currentColor != red:
+        currentColor = 'Red'
+        if currentColor != color:
+            color = 'Red'
 
-        str_red = 'the Color is Red'
-        print (str_red)
+            str_red = 'the Color is Red'
+            print (str_red)
 
-        #opens mp3 file (w/default) and plays audio
-        os.system("red.mp3")
+            #opens mp3 file (w/default) and plays audio
+            os.system("red.mp3")
 
     elif (yellowPixelCount > redPixelCount) and (yellowPixelCount > greenPixelCount):
-        #cplor = yellow
-        print (str_yellow)
+        currentColor = 'Yellow'
+        if currentColor != color:
+            color = 'Yellow'
+            #cplor = yellow
+            print (str_yellow)
 
-        #opens mp3 file (w/default) and plays audio
-        os.system("yellow.mp3")
+            #opens mp3 file (w/default) and plays audio
+            os.system("yellow.mp3")
     elif (greenPixelCount > redPixelCount) and (greenPixelCount > yellowPixelCount):
-        #color = green
-        print (str_green)
+        currentColor = 'Green'
+        if currentColor != color:
+            color = 'Green'
+            #color = green
+            print (str_green)
 
-        #opens mp3 file (w/default) and plays audio
-        os.system("green.mp3")
+            #opens mp3 file (w/default) and plays audio
+            os.system("green.mp3")
     else:
         print ('No Conclusion')
 
